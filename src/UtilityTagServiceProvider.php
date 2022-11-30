@@ -2,12 +2,11 @@
 
 namespace Corals\Modules\Utility\Tag;
 
-use Corals\Modules\Utility\Tag\Providers\UtilityAuthServiceProvider;
-use Corals\Modules\Utility\Tag\Providers\UtilityRouteServiceProvider;
 use Corals\Modules\Utility\Tag\Facades\Tag;
 use Corals\Modules\Utility\Tag\Models\Tag as TagModel;
+use Corals\Modules\Utility\Tag\Providers\UtilityAuthServiceProvider;
+use Corals\Modules\Utility\Tag\Providers\UtilityRouteServiceProvider;
 use Corals\Settings\Facades\Modules;
-use Corals\Settings\Facades\Settings;
 use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Foundation\AliasLoader;
 use Illuminate\Support\ServiceProvider;

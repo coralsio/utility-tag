@@ -49,7 +49,7 @@ trait HasTags
      */
     public function setTagsAttribute($tags)
     {
-        if (!$this->exists) {
+        if (! $this->exists) {
             $this->queuedTags = $tags;
 
             return;
@@ -117,13 +117,12 @@ trait HasTags
         });
 
         $newTags = array_filter($tags, function ($tag) {
-            return !is_numeric($tag);
+            return ! is_numeric($tag);
         });
 
         $tags = $className::find($existingTags);
 
         foreach ($newTags as $newTag) {
-
             $tags = $tags->push($className::create([
                 'name' => $newTag,
                 'module' => $this->getModuleName(),

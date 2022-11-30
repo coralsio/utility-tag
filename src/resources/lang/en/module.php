@@ -3,6 +3,6 @@
 return [
     'tag' => [
         'title' => 'Tags',
-        'title_singular' => 'Tag'
+        'title_singular' => 'Tag',
     ],
 ];

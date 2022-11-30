@@ -28,7 +28,7 @@ class UtilityTagMenuDatabaseSeeder extends Seeder
                 'icon' => 'fa fa-tags',
                 'target' => null,
                 'roles' => '["1"]',
-                'order' => 0
+                'order' => 0,
             ],
             ]
         );

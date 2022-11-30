@@ -57,13 +57,14 @@ class TagsDataTable extends BaseDataTable
         return [
             'delete' => ['title' => trans('Corals::labels.delete'), 'permission' => 'Utility::tag.delete', 'confirmation' => trans('Corals::labels.confirmation.title')],
             'active' => ['title' => '<i class="fa fa-check-circle"></i> ' . trans('Corals::attributes.status_options.active'), 'permission' => 'Utility::tag.update', 'confirmation' => trans('Corals::labels.confirmation.title')],
-            'inActive' => ['title' => '<i class="fa fa-check-circle-o"></i> ' . trans('Corals::attributes.status_options.inactive'), 'permission' => 'Utility::tag.update', 'confirmation' => trans('Corals::labels.confirmation.title')]
+            'inActive' => ['title' => '<i class="fa fa-check-circle-o"></i> ' . trans('Corals::attributes.status_options.inactive'), 'permission' => 'Utility::tag.update', 'confirmation' => trans('Corals::labels.confirmation.title')],
         ];
     }
 
     protected function getOptions()
     {
         $url = url(config('utility-tag.models.tag.resource_url'));
+
         return ['resource_url' => $url];
     }
 }
