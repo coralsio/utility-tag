@@ -36,7 +36,7 @@ class UtilityTagTest extends TestCase
             'CMS' => 'corals-cms',
         ];
 
-        $tags = ['palestine', 'brazil', 'france', 'turkey', 'australia'];
+        $tags = ['accept', 'statement', 'system', 'reject'];
         $active = false;
         foreach ($modules as $module => $code) {
             if (Modules::isModuleActive($code)) {
@@ -127,6 +127,7 @@ class UtilityTagTest extends TestCase
 
             $response->assertStatus(200)->assertSeeText('Tag has been deleted successfully.');
 
+            $this->isSoftDeletableModel(Tag::class);
             $this->assertDatabaseMissing('utility_tags', [
                 "name" => $this->tag->name,
                 "slug" => $this->tag->slug,
