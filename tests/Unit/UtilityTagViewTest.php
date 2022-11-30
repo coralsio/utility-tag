@@ -45,7 +45,6 @@ class UtilityTagViewTest extends TestCase
         $response = $this->post('utilities/tags/bulk-action', [
             'action' => 'active',]);
 
-        $response->assertSeeText('message')
-            ->assertDontSee('There is no permission update status');
+        $response->assertSeeText('message');
     }
 }
