@@ -30,7 +30,7 @@ class TagTransformer extends BaseTransformer
             'module' => $tag->module ?? '-',
             'created_at' => format_date($tag->created_at),
             'updated_at' => format_date($tag->updated_at),
-            'action' => $this->actions($tag)
+            'action' => $this->actions($tag),
         ];
 
         return parent::transformResponse($transformedArray);

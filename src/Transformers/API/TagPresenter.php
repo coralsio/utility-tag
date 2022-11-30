@@ -6,7 +6,6 @@ use Corals\Foundation\Transformers\FractalPresenter;
 
 class TagPresenter extends FractalPresenter
 {
-
     /**
      * @return TagTransformer
      */

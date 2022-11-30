@@ -16,7 +16,7 @@ class TagService extends BaseServiceClass
             $tag->clearMediaCollection($tag->mediaCollectionName);
         }
 
-        if ($request->hasFile('thumbnail') && !$request->has('clear')) {
+        if ($request->hasFile('thumbnail') && ! $request->has('clear')) {
             $tag->addMedia($request->file('thumbnail'))
                 ->withCustomProperties(['root' => 'user_' . user()->hashed_id])
                 ->toMediaCollection($tag->mediaCollectionName);

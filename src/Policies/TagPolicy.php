@@ -19,6 +19,7 @@ class TagPolicy extends BasePolicy
         if ($user->can('Utility::tag.view')) {
             return true;
         }
+
         return false;
     }
 
@@ -41,6 +42,7 @@ class TagPolicy extends BasePolicy
         if ($user->can('Utility::tag.update')) {
             return true;
         }
+
         return false;
     }
 
@@ -54,6 +56,7 @@ class TagPolicy extends BasePolicy
         if ($user->can('Utility::tag.delete')) {
             return true;
         }
+
         return false;
     }
 }

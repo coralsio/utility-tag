@@ -3,10 +3,10 @@
 namespace Corals\Modules\Utility\Tag\Http\Controllers;
 
 use Corals\Foundation\Http\Controllers\BaseController;
+use Corals\Foundation\Http\Requests\BulkRequest;
 use Corals\Modules\Utility\Category\Models\Category;
 use Corals\Modules\Utility\Tag\DataTables\TagsDataTable;
 use Corals\Modules\Utility\Tag\Http\Requests\TagRequest;
-use Corals\Foundation\Http\Requests\BulkRequest;
 use Corals\Modules\Utility\Tag\Models\Tag;
 use Corals\Modules\Utility\Tag\Services\TagService;
 
@@ -113,11 +113,9 @@ class TagsController extends BaseController
      * @param Tag $tag
      * @return \Illuminate\Http\JsonResponse
      */
-
     public function bulkAction(BulkRequest $request)
     {
         try {
-
             $action = $request->input('action');
             $selection = json_decode($request->input('selection'), true);
 
@@ -130,14 +128,15 @@ class TagsController extends BaseController
                         $this->destroy($tag_request, $tag);
                     }
                     $message = ['level' => 'success', 'message' => trans('Corals::messages.success.deleted', ['item' => $this->title_singular])];
+
                     break;
 
-                case 'active' :
+                case 'active':
                     foreach ($selection as $selection_id) {
                         $tag = Tag::findByHash($selection_id);
                         if (user()->can('Utility::tag.update')) {
                             $tag->update([
-                                'status' => 'active'
+                                'status' => 'active',
                             ]);
                             $tag->save();
                             $message = ['level' => 'success', 'message' => trans('utility-tag::attributes.update_status', ['item' => $this->title_singular])];
@@ -145,14 +144,15 @@ class TagsController extends BaseController
                             $message = ['level' => 'error', 'message' => trans('utility-tag::attributes.no_permission', ['item' => $this->title_singular])];
                         }
                     }
+
                     break;
 
-                case 'inActive' :
+                case 'inActive':
                     foreach ($selection as $selection_id) {
                         $tag = Tag::findByHash($selection_id);
                         if (user()->can('Utility::tag.update')) {
                             $tag->update([
-                                'status' => 'inactive'
+                                'status' => 'inactive',
                             ]);
                             $tag->save();
                             $message = ['level' => 'success', 'message' => trans('utility-tag::attributes.update_status', ['item' => $this->title_singular])];
@@ -160,10 +160,9 @@ class TagsController extends BaseController
                             $message = ['level' => 'error', 'message' => trans('utility-tag::attributes.no_permission', ['item' => $this->title_singular])];
                         }
                     }
+
                     break;
             }
-
-
         } catch (\Exception $exception) {
             log_exception($exception, Category::class, 'bulkAction');
             $message = ['level' => 'error', 'message' => $exception->getMessage()];
@@ -171,7 +170,6 @@ class TagsController extends BaseController
 
         return response()->json($message);
     }
-
 
     public function destroy(TagRequest $request, Tag $tag)
     {

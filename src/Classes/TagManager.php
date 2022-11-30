@@ -3,23 +3,20 @@
 namespace Corals\Modules\Utility\Tag\Classes;
 
 use Corals\Modules\Utility\Tag\Models\Tag;
-use Illuminate\Support\Arr;
 
 class TagManager
 {
-
     /**
      * @param null $module
      * @param bool $objects
      * @param null $status
      * @return \Illuminate\Database\Eloquent\Builder|\Illuminate\Database\Eloquent\Builder[]|\Illuminate\Database\Eloquent\Collection|\Illuminate\Support\Collection
      */
-
     public function getTagsList($module = null, $objects = false, $status = null)
     {
         $tags = Tag::query();
 
-        if (!is_null($module)) {
+        if (! is_null($module)) {
             $tags = $tags->withModule($module);
         }
 

@@ -32,14 +32,14 @@ class TagRequest extends BaseRequest
         if ($this->isUpdate() || $this->isStore()) {
             $rules = array_merge($rules, [
                 'status' => 'required',
-                'thumbnail' => 'nullable|image'
+                'thumbnail' => 'nullable|image',
             ]);
         }
 
         if ($this->isStore()) {
             $rules = array_merge($rules, [
                 'name' => 'required|max:191|unique:utility_tags,name',
-                'slug' => 'required|max:191|unique:utility_tags,slug'
+                'slug' => 'required|max:191|unique:utility_tags,slug',
             ]);
         }
 

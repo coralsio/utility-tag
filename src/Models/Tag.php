@@ -14,7 +14,11 @@ use Spatie\MediaLibrary\InteractsWithMedia;
 
 class Tag extends BaseModel implements HasMedia
 {
-    use PresentableTrait, LogsActivity, Sluggable, ModelPropertiesTrait, InteractsWithMedia;
+    use PresentableTrait;
+    use LogsActivity;
+    use Sluggable;
+    use ModelPropertiesTrait;
+    use InteractsWithMedia;
 
     /**
      *  Model configuration.
@@ -28,12 +32,12 @@ class Tag extends BaseModel implements HasMedia
         'properties' => 'json',
     ];
 
-    public function sluggable() : array
+    public function sluggable(): array
     {
         return [
             'slug' => [
-                'source' => 'name'
-            ]
+                'source' => 'name',
+            ],
         ];
     }
 
@@ -91,7 +95,7 @@ class Tag extends BaseModel implements HasMedia
     {
         $tag = static::findFromString($name, $module);
 
-        if (!$tag) {
+        if (! $tag) {
             $tag = static::create([
                 'name' => $name,
                 'module' => $module,

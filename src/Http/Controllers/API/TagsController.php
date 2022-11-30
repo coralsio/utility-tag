@@ -41,6 +41,7 @@ class TagsController extends APIBaseController
     {
         try {
             $tag = $this->tagService->store($request, Tag::class);
+
             return apiResponse($this->tagService->getModelDetails(), trans('Corals::messages.success.created', ['item' => $tag->name]));
         } catch (\Exception $exception) {
             return apiExceptionResponse($exception);

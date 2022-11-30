@@ -23,7 +23,6 @@ class UtilityTagTest extends TestCase
             $query->where('name', 'superuser');
         })->first();
         Auth::loginUsingId($user->id);
-
     }
 
     public function test_utility_tag_store()
@@ -63,7 +62,7 @@ class UtilityTagTest extends TestCase
             }
         }
 
-        if (!$active) {
+        if (! $active) {
             $tag = array_rand($tags);
             $response = $this->post('utilities/tags', [
                 "name" => $tags[$tag],
@@ -105,7 +104,7 @@ class UtilityTagTest extends TestCase
             $response = $this->put('utilities/tags/' . $this->tag->hashed_id, [
                 "name" => $this->tag->name,
                 "slug" => $this->tag->slug,
-                "status" => 'inactive']);
+                "status" => 'inactive', ]);
 
             $response->assertRedirect('utilities/tags');
             $this->assertDatabaseHas('utility_tags', [
@@ -132,7 +131,7 @@ class UtilityTagTest extends TestCase
                 "name" => $this->tag->name,
                 "slug" => $this->tag->slug,
                 "module" => $this->tag->module,
-                "status" => $this->tag->status]);
+                "status" => $this->tag->status, ]);
         }
         $this->assertTrue(true);
     }
