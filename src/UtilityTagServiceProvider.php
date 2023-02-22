@@ -2,6 +2,7 @@
 
 namespace Corals\Modules\Utility\Tag;
 
+use Corals\Foundation\Providers\BasePackageServiceProvider;
 use Corals\Modules\Utility\Tag\Facades\Tag;
 use Corals\Modules\Utility\Tag\Models\Tag as TagModel;
 use Corals\Modules\Utility\Tag\Providers\UtilityAuthServiceProvider;
@@ -9,11 +10,15 @@ use Corals\Modules\Utility\Tag\Providers\UtilityRouteServiceProvider;
 use Corals\Settings\Facades\Modules;
 use Illuminate\Database\Eloquent\Relations\Relation;
 use Illuminate\Foundation\AliasLoader;
-use Illuminate\Support\ServiceProvider;
 
-class UtilityTagServiceProvider extends ServiceProvider
+class UtilityTagServiceProvider extends BasePackageServiceProvider
 {
-    public function boot()
+    /**
+     * @var
+     */
+    protected $packageCode = 'corals-utility-tag';
+
+    public function bootPackage()
     {
         $this->loadViewsFrom(__DIR__ . '/resources/views', 'utility-tag');
         $this->loadTranslationsFrom(__DIR__ . '/resources/lang', 'utility-tag');
@@ -28,10 +33,9 @@ class UtilityTagServiceProvider extends ServiceProvider
         ]);
 
         $this->registerMorphMaps();
-        $this->registerModulesPackages();
     }
 
-    public function register()
+    public function registerPackage()
     {
         $this->app->register(UtilityAuthServiceProvider::class);
         $this->app->register(UtilityRouteServiceProvider::class);
@@ -49,7 +53,7 @@ class UtilityTagServiceProvider extends ServiceProvider
         ]);
     }
 
-    protected function registerModulesPackages()
+    public function registerModulesPackages()
     {
         Modules::addModulesPackages('corals/utility-tag');
     }
