@@ -3,8 +3,8 @@
 namespace Corals\Utility\Tag\Policies;
 
 use Corals\Foundation\Policies\BasePolicy;
-use Corals\Utility\Tag\Models\Tag;
 use Corals\User\Models\User;
+use Corals\Utility\Tag\Models\Tag;
 
 class TagPolicy extends BasePolicy
 {
