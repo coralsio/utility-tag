@@ -1,6 +1,6 @@
 <?php
 
-namespace Corals\Modules\Utility\Tag\Services;
+namespace Corals\Utility\Tag\Services;
 
 use Corals\Foundation\Services\BaseServiceClass;
 

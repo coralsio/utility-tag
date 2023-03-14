@@ -1,9 +1,9 @@
 <?php
 
-namespace Corals\Modules\Utility\Tag\Http\Requests;
+namespace Corals\Utility\Tag\Http\Requests;
 
 use Corals\Foundation\Http\Requests\BaseRequest;
-use Corals\Modules\Utility\Tag\Models\Tag;
+use Corals\Utility\Tag\Models\Tag;
 
 class TagRequest extends BaseRequest
 {

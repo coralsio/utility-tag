@@ -1,6 +1,6 @@
 <?php
 
-namespace Corals\Modules\Utility\Tag\Facades;
+namespace Corals\Utility\Tag\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
@@ -11,6 +11,6 @@ class Tag extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return \Corals\Modules\Utility\Tag\Classes\TagManager::class;
+        return \Corals\Utility\Tag\Classes\TagManager::class;
     }
 }

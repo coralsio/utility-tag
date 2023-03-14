@@ -1,8 +1,8 @@
 <?php
 
-namespace Corals\Modules\Utility\Tag\Classes;
+namespace Corals\Utility\Tag\Classes;
 
-use Corals\Modules\Utility\Tag\Models\Tag;
+use Corals\Utility\Tag\Models\Tag;
 
 class TagManager
 {

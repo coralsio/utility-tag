@@ -1,9 +1,9 @@
 <?php
 
-namespace Corals\Modules\Utility\Tag\Transformers;
+namespace Corals\Utility\Tag\Transformers;
 
 use Corals\Foundation\Transformers\BaseTransformer;
-use Corals\Modules\Utility\Tag\Models\Tag;
+use Corals\Utility\Tag\Models\Tag;
 
 class TagTransformer extends BaseTransformer
 {

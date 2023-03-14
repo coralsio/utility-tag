@@ -1,9 +1,9 @@
 <?php
 
-namespace Corals\Modules\Utility\Tag\Policies;
+namespace Corals\Utility\Tag\Policies;
 
 use Corals\Foundation\Policies\BasePolicy;
-use Corals\Modules\Utility\Tag\Models\Tag;
+use Corals\Utility\Tag\Models\Tag;
 use Corals\User\Models\User;
 
 class TagPolicy extends BasePolicy

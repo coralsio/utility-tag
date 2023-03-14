@@ -4,7 +4,7 @@
     "author": "Corals",
     "type": "module",
     "description": "Utility Tags",
-    "namespace": "Corals\\Modules\\Utility\\Tag",
+    "namespace": "Corals\\Utility\\Tag",
     "provider": "UtilityTagServiceProvider",
     "version": "1.0",
     "load_order": "0",

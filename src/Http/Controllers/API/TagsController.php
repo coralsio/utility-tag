@@ -1,13 +1,13 @@
 <?php
 
-namespace Corals\Modules\Utility\Tag\Http\Controllers\API;
+namespace Corals\Utility\Tag\Http\Controllers\API;
 
 use Corals\Foundation\Http\Controllers\APIBaseController;
-use Corals\Modules\Utility\Tag\DataTables\TagsDataTable;
-use Corals\Modules\Utility\Tag\Http\Requests\TagRequest;
-use Corals\Modules\Utility\Tag\Models\Tag;
-use Corals\Modules\Utility\Tag\Services\TagService;
-use Corals\Modules\Utility\Tag\Transformers\API\TagPresenter;
+use Corals\Utility\Tag\DataTables\TagsDataTable;
+use Corals\Utility\Tag\Http\Requests\TagRequest;
+use Corals\Utility\Tag\Models\Tag;
+use Corals\Utility\Tag\Services\TagService;
+use Corals\Utility\Tag\Transformers\API\TagPresenter;
 
 class TagsController extends APIBaseController
 {

@@ -1,10 +1,10 @@
 <?php
 
-namespace Corals\Modules\Utility\Tag\DataTables;
+namespace Corals\Utility\Tag\DataTables;
 
 use Corals\Foundation\DataTables\BaseDataTable;
-use Corals\Modules\Utility\Tag\Models\Tag;
-use Corals\Modules\Utility\Tag\Transformers\TagTransformer;
+use Corals\Utility\Tag\Models\Tag;
+use Corals\Utility\Tag\Transformers\TagTransformer;
 use Yajra\DataTables\EloquentDataTable;
 
 class TagsDataTable extends BaseDataTable

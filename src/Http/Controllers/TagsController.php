@@ -1,14 +1,14 @@
 <?php
 
-namespace Corals\Modules\Utility\Tag\Http\Controllers;
+namespace Corals\Utility\Tag\Http\Controllers;
 
 use Corals\Foundation\Http\Controllers\BaseController;
 use Corals\Foundation\Http\Requests\BulkRequest;
-use Corals\Modules\Utility\Category\Models\Category;
-use Corals\Modules\Utility\Tag\DataTables\TagsDataTable;
-use Corals\Modules\Utility\Tag\Http\Requests\TagRequest;
-use Corals\Modules\Utility\Tag\Models\Tag;
-use Corals\Modules\Utility\Tag\Services\TagService;
+use Corals\Utility\Category\Models\Category;
+use Corals\Utility\Tag\DataTables\TagsDataTable;
+use Corals\Utility\Tag\Http\Requests\TagRequest;
+use Corals\Utility\Tag\Models\Tag;
+use Corals\Utility\Tag\Services\TagService;
 
 class TagsController extends BaseController
 {

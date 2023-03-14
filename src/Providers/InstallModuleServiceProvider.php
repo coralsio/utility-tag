@@ -1,10 +1,10 @@
 <?php
 
-namespace Corals\Modules\Utility\Tag\Providers;
+namespace Corals\Utility\Tag\Providers;
 
 use Corals\Foundation\Providers\BaseInstallModuleServiceProvider;
-use Corals\Modules\Utility\Tag\database\migrations\CreateTagTables;
-use Corals\Modules\Utility\Tag\database\seeds\UtilityTagDatabaseSeeder;
+use Corals\Utility\Tag\database\migrations\CreateTagTables;
+use Corals\Utility\Tag\database\seeds\UtilityTagDatabaseSeeder;
 
 class InstallModuleServiceProvider extends BaseInstallModuleServiceProvider
 {

@@ -1,8 +1,8 @@
 <?php
 
-namespace Corals\Modules\Utility\Tag\Traits;
+namespace Corals\Utility\Tag\Traits;
 
-use Corals\Modules\Utility\Tag\Models\Tag;
+use Corals\Utility\Tag\Models\Tag;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Model;
