@@ -11,6 +11,6 @@
     "folder": "utility-tag",
     "icon": "fa fa-tags",
     "require": {
-        "corals-utility": "^4.0"
+        "corals-utility": "^10.0.0"
     }
 }
