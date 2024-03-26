@@ -24,6 +24,9 @@
             "Tests\\": "tests/"
         }
     },
+    "require": {
+        "cviebrock/eloquent-sluggable": "10.0.0"
+    },
     "require-dev": {
         "phpunit/phpunit": "^9",
         "laravel/pint": "^1.0"
